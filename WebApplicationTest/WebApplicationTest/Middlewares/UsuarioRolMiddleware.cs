@@ -19,8 +19,8 @@ namespace WebApplicationTest.Middlewares
                 string[] parts = context.User.Identity.Name.Split('\\');
 
                 var domain = parts[0];
-                //var userName = parts[1];
-                var userName = "Tomy";
+                var userName = parts[1];
+                //var userName = "Tomy";
 
                 // Obtener los roles del usuario desde la base de datos
                 var roles = await usuarioRolServicio.GetRolesForUserAsync(userName);
