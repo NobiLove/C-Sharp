@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TestAPI.Models;
 
+//dotnet ef dbcontext scaffold "Name=ConnectionStrings:BikestoresDB" Microsoft.EntityFrameworkCore.SqlServer -o Models --force
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
