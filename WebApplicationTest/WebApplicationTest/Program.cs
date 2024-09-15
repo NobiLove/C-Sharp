@@ -4,7 +4,7 @@ using WebApplicationTest.EFModels;
 using WebApplicationTest.Middlewares;
 using WebApplicationTest.Services;
 
-//dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=Qwerasdf1;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o EFModels --force
+//dotnet ef dbcontext scaffold "Name=ConnectionStrings:TestDB" Microsoft.EntityFrameworkCore.SqlServer -o EFModels --force
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IUsuarioRolServicio, UsuarioRolServicio>();
-builder.Services.AddDbContext<TestDbContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=Qwerasdf1;Trust Server Certificate=True"));
+builder.Services.AddDbContext<TestDbContext>(options => options.UseSqlServer("Name=ConnectionStrings:TestDB"));
 
 var app = builder.Build();
 
